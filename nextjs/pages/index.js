@@ -10,8 +10,15 @@ import {
   Button,
   Grid,
   Paper,
+  CardMedia,
   makeStyles
 } from '@material-ui/core'
+import {
+  BusinessRounded,
+  BusinessCenterRounded,
+  EmailRounded,
+  HomeRounded, LibraryBooksRounded
+} from '@material-ui/icons'
 
 const theme = {
   background: 'linear-gradient(to right, #4dabf5 10%, #1769aa 100%)',
@@ -25,21 +32,33 @@ export default function Home() {
         <title>Connect In</title>
       </Head>
 
-      <Box className={styles.containerFluid} style={theme}>
+      <Box className={[styles.containerFluid, styles.primaryGrad]}  >
         <Container>
-          <div className={styles.divAppBar}>
-            <AppBar position="static" className={styles.mainAppBar}>
-              <Toolbar>
-                <h1 className={styles.titleAppBar}>Connect In</h1>
-                <div>
-                  <Button variant="text" color="inherit">Companies</Button>
-                  <Button variant="text" color="inherit">Jobs</Button>
-                  <Button variant="text" color="inherit">Contact</Button>
+          <AppBar position="static" className={styles.mainAppBar}>
+            <Toolbar>
+              <div className={styles.titleAppBar}>
+                <h1 >Connect In</h1>
+
+              </div>
+              <div className={styles.menuAppBar}>
+                <div className={styles.leftMenuApp}>
+
+                  <Button startIcon={<HomeRounded />} variant="text" color="inherit">
+                    <Link href='/'>home</Link>
+                  </Button>
+                  <Button startIcon={<BusinessRounded />} variant="text" color="inherit">
+                    <Link href='/home'>Companies</Link>
+                  </Button>
+                  <Button startIcon={<BusinessCenterRounded />} variant="text" color="inherit">Jobs</Button>
+                  <Button startIcon={<EmailRounded />} variant="text" color="inherit">Contact</Button>
+                  <Button startIcon={<LibraryBooksRounded />} variant="text" color="inherit">Art</Button>
+                </div>
+                <div className={styles.loginMenuApp}>
                   <Button variant="outlined" color="inherit">Login</Button>
                 </div>
-              </Toolbar>
-            </AppBar>
-          </div>
+              </div>
+            </Toolbar>
+          </AppBar>
           {/* <h1 color="primary.main">In the box</h1> */}
           {/* <p>Find in-depth information about Next.js features and API.</p> */}
         </Container>
@@ -48,16 +67,33 @@ export default function Home() {
             direction="row"
             justify="center"
             alignItems="center">
-            <Grid item xs={5}>
-              Column 1
+            <Grid item xs={5} className={styles.leftInfo}>
+              <CardMedia image="/assets/working.png" />
+              <h1>Great!!</h1>
+              <h2>Let's find a better job with just 1 click ahead</h2>
             </Grid>
-            <Grid item xs={7}>
-              <Paper>Column 2</Paper>
+            <Grid item xs={7} className={{}}>
+              <Paper className={styles.rightInfo} elevation={2}>
+                <Grid container
+            direction="row"
+            justify="center"
+            alignItems="center">
+          
+                <Grid item xs={12}> 
+                <h3 style={{marginBottom:'0.5rem'}} >It's the easiest way to find 2</h3>
+                </Grid>   
+                <Grid item xs={6}>Grid 1</Grid>   
+                <Grid item xs={6}>Grid 1</Grid>   
+                <Grid item xs={6}>Grid 1</Grid>   
+                <Grid item xs={6}>Grid 1</Grid>
+
+                </Grid>
+              </Paper>
             </Grid>
           </Grid>
         </Container>
       </Box>
-      <Box>
+      <Box className={styles.containerFluid}>
 
       </Box>
     </div>

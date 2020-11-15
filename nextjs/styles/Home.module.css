@@ -1,6 +1,15 @@
 .containerFluid {
   width: 100%;
   min-height: 100vh;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.primaryGrad {
+  background: linear-gradient(to right, #4dabf5 10%, #1769aa 100%);
+
 }
 
 .mainAppBar {
@@ -9,8 +18,38 @@
   box-shadow: none !important;
 }
 
-.divAppBar, .titleAppBar {
+.titleAppBar {
+  flex-grow: 2;
+}
+
+.menuAppBar {
+  flex-grow : 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.leftMenuApp {
   flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.loginMenuApp{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.leftInfo{
+  color: #ffffff;
+}
+
+.rightInfo{
+  padding: 1rem;
+  background-color: #ffffff;
 }
 /* .main {
   padding: 5rem 0;

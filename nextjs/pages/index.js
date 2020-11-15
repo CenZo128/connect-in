@@ -1,16 +1,67 @@
 import Head from 'next/head'
 import Link from 'next/link'
-import { Box, Container } from '@material-ui/core'
+import styles from '../styles/Home.module.css'
+import {
+  Box,
+  Container,
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Grid,
+  Paper,
+  makeStyles
+} from '@material-ui/core'
+
+const theme = {
+  background: 'linear-gradient(to right, #4dabf5 10%, #1769aa 100%)',
+};
 
 export default function Home() {
-  
-  return(
-    <Box>
+
+  return (
+    <div>
       <Head>
         <title>Connect In</title>
       </Head>
-      <h1>In the box</h1>
-    </Box>
+
+      <Box className={styles.containerFluid} style={theme}>
+        <Container>
+          <div className={styles.divAppBar}>
+            <AppBar position="static" className={styles.mainAppBar}>
+              <Toolbar>
+                <h1 className={styles.titleAppBar}>Connect In</h1>
+                <div>
+                  <Button variant="text" color="inherit">Companies</Button>
+                  <Button variant="text" color="inherit">Jobs</Button>
+                  <Button variant="text" color="inherit">Contact</Button>
+                  <Button variant="outlined" color="inherit">Login</Button>
+                </div>
+              </Toolbar>
+            </AppBar>
+          </div>
+          {/* <h1 color="primary.main">In the box</h1> */}
+          {/* <p>Find in-depth information about Next.js features and API.</p> */}
+        </Container>
+        <Container>
+          <Grid container
+            direction="row"
+            justify="center"
+            alignItems="center">
+            <Grid item xs={5}>
+              Column 1
+            </Grid>
+            <Grid item xs={7}>
+              <Paper>Column 2</Paper>
+            </Grid>
+          </Grid>
+        </Container>
+      </Box>
+      <Box>
+
+      </Box>
+    </div>
+
   )
   // return (
   //   <div className={styles.container}>

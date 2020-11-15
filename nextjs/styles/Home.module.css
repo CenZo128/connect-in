@@ -1,13 +1,18 @@
-.container {
+.containerFluid {
+  width: 100%;
   min-height: 100vh;
-  padding: 0 0.5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
 }
 
-.main {
+.mainAppBar {
+  font-family: inherit !important;
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+.divAppBar, .titleAppBar {
+  flex-grow: 1;
+}
+/* .main {
   padding: 5rem 0;
   flex: 1;
   display: flex;
@@ -119,4 +124,4 @@
     width: 100%;
     flex-direction: column;
   }
-}
+} */

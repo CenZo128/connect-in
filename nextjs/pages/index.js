@@ -1,18 +1,20 @@
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import styles from '../styles/Home.module.css'
 import {
   Box,
   Container,
   AppBar,
   Toolbar,
-  Typography,
+  TextField,
   Button,
   Grid,
   Paper,
   CardMedia,
   makeStyles
 } from '@material-ui/core'
+
 import {
   BusinessRounded,
   BusinessCenterRounded,
@@ -20,84 +22,108 @@ import {
   HomeRounded, LibraryBooksRounded
 } from '@material-ui/icons'
 
-const theme = {
-  background: 'linear-gradient(to right, #4dabf5 10%, #1769aa 100%)',
-};
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles'
+
+const theme = createMuiTheme({
+  button: {
+    fontFamily: 'Segoe UI'
+  }
+});
+
+const buttonFont = {
+  style: {
+    fontFamily: 'Segoe UI',
+  }
+}
 
 export default function Home() {
 
   return (
-    <div>
-      <Head>
-        <title>Connect In</title>
-      </Head>
+    <ThemeProvider theme={theme}>
+      <div>
+        <Head>
+          <title>Connect In</title>
+        </Head>
 
-      <Box className={[styles.containerFluid, styles.primaryGrad]}  >
-        <Container>
-          <AppBar position="static" className={styles.mainAppBar}>
-            <Toolbar>
-              <div className={styles.titleAppBar}>
-                <h1 >Connect In</h1>
+        <Box className={[styles.containerFluid, styles.primaryGrad]}  >
+          <Container style={{ marginBottom: '1.5rem' }}>
+            <AppBar position="static" className={styles.mainAppBar}>
+              <Toolbar>
+                <div className={styles.titleAppBar}>
+                  <h1 >Connect In</h1>
 
-              </div>
-              <div className={styles.menuAppBar}>
-                <div className={styles.leftMenuApp}>
-
-                  <Button startIcon={<HomeRounded />} variant="text" color="inherit">
-                    <Link href='/'>home</Link>
-                  </Button>
-                  <Button startIcon={<BusinessRounded />} variant="text" color="inherit">
-                    <Link href='/home'>Companies</Link>
-                  </Button>
-                  <Button startIcon={<BusinessCenterRounded />} variant="text" color="inherit">Jobs</Button>
-                  <Button startIcon={<EmailRounded />} variant="text" color="inherit">Contact</Button>
-                  <Button startIcon={<LibraryBooksRounded />} variant="text" color="inherit">Art</Button>
                 </div>
-                <div className={styles.loginMenuApp}>
-                  <Button variant="outlined" color="inherit">Login</Button>
+                <div className={styles.menuAppBar}>
+                  <div className={styles.leftMenuApp}>
+
+                    <Button startIcon={<HomeRounded />} variant="text" color="inherit">
+                      <Link href='/'>home</Link>
+                    </Button>
+                    <Button startIcon={<BusinessRounded />} variant="text" color="inherit">
+                      <Link href='/home'>Companies</Link>
+                    </Button>
+                    <Button startIcon={<BusinessCenterRounded />} variant="text" color="inherit">Jobs</Button>
+                    <Button startIcon={<EmailRounded />} variant="text" color="inherit">Contact</Button>
+                    <Button startIcon={<LibraryBooksRounded />} variant="text" color="inherit">Articles</Button>
+                  </div>
+                  <div className={styles.loginMenuApp}>
+                    <Button variant="outlined" color="inherit">Login</Button>
+                  </div>
                 </div>
-              </div>
-            </Toolbar>
-          </AppBar>
-          {/* <h1 color="primary.main">In the box</h1> */}
-          {/* <p>Find in-depth information about Next.js features and API.</p> */}
-        </Container>
-        <Container>
-          <Grid container
-            direction="row"
-            justify="center"
-            alignItems="center">
-            <Grid item xs={5} className={styles.leftInfo}>
-              <CardMedia image="/assets/working.png" />
-              <h1>Great!!</h1>
-              <h2>Let's find a better job with just 1 click ahead</h2>
+              </Toolbar>
+            </AppBar>
+            {/* <h1 color="primary.main">In the box</h1> */}
+            {/* <p>Find in-depth information about Next.js features and API.</p> */}
+          </Container>
+          <Container>
+            <Grid container
+              direction="row"
+              justify="center"
+              alignItems="center">
+              <Grid item xs={5} className={styles.leftInfo}>
+                <Box style={{ marginBottom: '0.5' }}>
+                  <img src="/working.jpg" width={500} height={500} />
+
+                </Box>
+                <h3>Let's find a better job with just 1 click ahead!!</h3>
+                {/* <h2></h2> */}
+              </Grid>
+              <Grid item xs={7} >
+                <Paper className={styles.rightInfo} elevation={5}>
+                  <Box mb={3}>
+                    <h3 >It's the easiest way to find jobs</h3>
+                  </Box>
+                  <Grid container
+                    direction="row"
+                    justify="center"
+                    alignItems="center"
+                    spacing={3}>
+
+                    {/* <hr/> */}
+                    <Grid item xs={6}>
+                      <TextField color="primary" label="Job" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField color="primary" label="Region" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <TextField color="primary" label="Comp" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                    </Grid>
+                    <Grid item xs={6}>
+                      <Button className={styles.primaryGradButton} fullWidth="true" size="large" >Search</Button>
+                    </Grid>
+
+                  </Grid>
+                </Paper>
+              </Grid>
             </Grid>
-            <Grid item xs={7} className={{}}>
-              <Paper className={styles.rightInfo} elevation={2}>
-                <Grid container
-            direction="row"
-            justify="center"
-            alignItems="center">
-          
-                <Grid item xs={12}> 
-                <h3 style={{marginBottom:'0.5rem'}} >It's the easiest way to find 2</h3>
-                </Grid>   
-                <Grid item xs={6}>Grid 1</Grid>   
-                <Grid item xs={6}>Grid 1</Grid>   
-                <Grid item xs={6}>Grid 1</Grid>   
-                <Grid item xs={6}>Grid 1</Grid>
+          </Container>
+        </Box>
+        {/* <Box className={styles.containerFluid}> */}
 
-                </Grid>
-              </Paper>
-            </Grid>
-          </Grid>
-        </Container>
-      </Box>
-      <Box className={styles.containerFluid}>
-
-      </Box>
-    </div>
-
+        {/* </Box> */}
+      </div>
+    </ThemeProvider>
   )
   // return (
   //   <div className={styles.container}>

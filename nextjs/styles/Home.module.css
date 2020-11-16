@@ -9,9 +9,11 @@
 
 .primaryGrad {
   background: linear-gradient(to right, #4dabf5 10%, #1769aa 100%);
-
 }
-
+.primaryGradButton {
+  background: linear-gradient(to right, #4dabf5 10%, #1769aa 100%);
+  color : white !important;
+}
 .mainAppBar {
   font-family: inherit !important;
   background: transparent !important;
@@ -45,11 +47,14 @@
 
 .leftInfo{
   color: #ffffff;
+  text-align: center;
 }
 
 .rightInfo{
   padding: 1rem;
   background-color: #ffffff;
+  min-height: 35rem;
+  font-family: inherit !important;
 }
 /* .main {
   padding: 5rem 0;

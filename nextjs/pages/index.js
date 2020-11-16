@@ -30,7 +30,7 @@ const theme = createMuiTheme({
   }
 });
 
-const buttonFont = {
+const customStyles = {
   style: {
     fontFamily: 'Segoe UI',
   }
@@ -81,7 +81,7 @@ export default function Home() {
               justify="center"
               alignItems="center">
               <Grid item xs={5} className={styles.leftInfo}>
-                <Box style={{ marginBottom: '0.5' }}>
+                <Box>
                   <img src="/working.jpg" width={500} height={500} />
 
                 </Box>
@@ -101,19 +101,23 @@ export default function Home() {
 
                     {/* <hr/> */}
                     <Grid item xs={6}>
-                      <TextField color="primary" label="Job" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                      <TextField color="primary" label="Job" variant="outlined" fullWidth="true" InputProps={customStyles}/>
                     </Grid>
                     <Grid item xs={6}>
-                      <TextField color="primary" label="Region" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                      <TextField color="primary" label="Region" variant="outlined" fullWidth="true" InputProps={customStyles}/>
                     </Grid>
                     <Grid item xs={6}>
-                      <TextField color="primary" label="Comp" variant="outlined" fullWidth="true" InputProps={buttonFont}/>
+                      <TextField color="primary" label="Comp" variant="outlined" fullWidth="true" InputProps={customStyles}/>
                     </Grid>
                     <Grid item xs={6}>
                       <Button className={styles.primaryGradButton} fullWidth="true" size="large" >Search</Button>
                     </Grid>
 
                   </Grid>
+                  <Box style={{borderTop:'1px solid #ccc'}} my={3}>
+                    <h5>Searched </h5>
+                  </Box>
+                  <Grid></Grid>
                 </Paper>
               </Grid>
             </Grid>

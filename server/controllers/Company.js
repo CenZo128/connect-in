@@ -9,6 +9,7 @@ class CompanyController {
       res.status(500).json({ message: error });
     }
   }
+  
   static async create(req, res) {
     const company = req.body;
 
@@ -19,8 +20,17 @@ class CompanyController {
       res.status(500).json({ message: error });
     }
   }
-  static update() {}
-  static delete() {}
+
+  static update(req, res) {}
+  static async delete(req, res) {
+    const { id } = req.params
+    try {
+      await Company.findByIdAndRemove(id)
+      res.status(200).json({message: 'success'});
+    } catch (error) {
+      res.status(500).json({ message: error });
+    }
+  }
 }
 
 module.exports = CompanyController;

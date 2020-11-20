@@ -6,10 +6,10 @@ class CompanyController {
       const companies = await Company.find();
       res.status(200).json(companies);
     } catch (error) {
-      res.status(500).json({ message: error });
+      res.status(500).json(error);
     }
   }
-  
+
   static async create(req, res) {
     const company = req.body;
 
@@ -17,18 +17,30 @@ class CompanyController {
       await Company.create(company);
       res.status(201).json({ message: "success" });
     } catch (error) {
-      res.status(500).json({ message: error });
+      res.status(500).json(error);
     }
   }
 
-  static update(req, res) {}
-  static async delete(req, res) {
-    const { id } = req.params
+  static async update(req, res) {
+    const { id } = req.params;
+    const updatedData = req.body;
+
     try {
-      await Company.findByIdAndRemove(id)
-      res.status(200).json({message: 'success'});
+      let data = await Company.findByIdAndUpdate(id, updatedData);
+      let newData = await Company.findById(id);
+      res.status(200).json(newData);
     } catch (error) {
-      res.status(500).json({ message: error });
+      res.status(500).json(error);
+    }
+  }
+
+  static async delete(req, res) {
+    const { id } = req.params;
+    try {
+      await Company.findByIdAndRemove(id);
+      res.status(200).json({ message: "success" });
+    } catch (error) {
+      res.status(500).json(error);
     }
   }
 }

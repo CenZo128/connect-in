@@ -125,26 +125,21 @@ export default function Home() {
             </Grid>
           </Container>
         </Box>
-        {/* <Box className={styles.containerFluid}> */}
+        <Box className={styles.containerFluid}>
           <Container>
             
           <Grid container
               direction="row"
               justify="center"
               alignItems="center">
-              <Grid item xs={6} className={styles.leftInfo}>
-                <Box>
-                  <img src="/working.jpg" width={500} height={500} />
-
-                </Box>
-                <h3>Let's find a better job with just 1 click ahead!!</h3>
-                {/* <h2></h2> */}
+              <Grid item xs={5} className={styles.leftInfo}>
+                 <h2></h2>
               </Grid>
-              <Grid item xs={6} >
+              <Grid item xs={7} >
                 </Grid>
             </Grid>
           </Container>
-        {/* </Box> */}
+        </Box>
       </div>
     </ThemeProvider>
   )

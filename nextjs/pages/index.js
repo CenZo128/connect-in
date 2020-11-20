@@ -114,17 +114,36 @@ export default function Home() {
                     </Grid>
 
                   </Grid>
-                  <Box style={{borderTop:'1px solid #ccc'}} my={3}>
-                    <h5>Searched </h5>
+                  <Box style={{ borderTop:'1px solid #ccc' }} my={3}>
+                    <h3>Searched </h3>
                   </Box>
-                  <Grid></Grid>
+                  <Grid>
+                    
+                  </Grid>
                 </Paper>
               </Grid>
             </Grid>
           </Container>
         </Box>
         {/* <Box className={styles.containerFluid}> */}
+          <Container>
+            
+          <Grid container
+              direction="row"
+              justify="center"
+              alignItems="center">
+              <Grid item xs={6} className={styles.leftInfo}>
+                <Box>
+                  <img src="/working.jpg" width={500} height={500} />
 
+                </Box>
+                <h3>Let's find a better job with just 1 click ahead!!</h3>
+                {/* <h2></h2> */}
+              </Grid>
+              <Grid item xs={6} >
+                </Grid>
+            </Grid>
+          </Container>
         {/* </Box> */}
       </div>
     </ThemeProvider>

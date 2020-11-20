@@ -114,18 +114,32 @@ export default function Home() {
                     </Grid>
 
                   </Grid>
-                  <Box style={{borderTop:'1px solid #ccc'}} my={3}>
-                    <h5>Searched </h5>
+                  <Box style={{ borderTop:'1px solid #ccc' }} my={3}>
+                    <h3>Searched </h3>
                   </Box>
-                  <Grid></Grid>
+                  <Grid>
+                    
+                  </Grid>
                 </Paper>
               </Grid>
             </Grid>
           </Container>
         </Box>
-        {/* <Box className={styles.containerFluid}> */}
-
-        {/* </Box> */}
+        <Box className={styles.containerFluid}>
+          <Container>
+            
+          <Grid container
+              direction="row"
+              justify="center"
+              alignItems="center">
+              <Grid item xs={5} className={styles.leftInfo}>
+                 <h2></h2>
+              </Grid>
+              <Grid item xs={7} >
+                </Grid>
+            </Grid>
+          </Container>
+        </Box>
       </div>
     </ThemeProvider>
   )
